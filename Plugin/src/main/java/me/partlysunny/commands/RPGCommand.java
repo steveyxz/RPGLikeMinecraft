@@ -1,6 +1,6 @@
 package me.partlysunny.commands;
 
-import me.partlysunny.commands.subcommands.SLBSubCommand;
+import me.partlysunny.commands.subcommands.RPGSubCommand;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,28 +13,28 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SLBCommand implements CommandExecutor {
+public class RPGCommand implements CommandExecutor {
 
-    public static Map<String, SLBSubCommand> subCommands = new HashMap<>();
-    public static final String command = "slb";
+    public static Map<String, RPGSubCommand> subCommands = new HashMap<>();
+    public static final String command = "rpg";
 
-    public static void registerSubCommand(SLBSubCommand c) {
+    public static void registerSubCommand(RPGSubCommand c) {
         subCommands.put(c.getId(), c);
     }
 
     public static boolean executeSubCommand(String id, CommandSender exe, String[] args) {
-        SLBSubCommand slbSubCommand = subCommands.get(id);
-        if (slbSubCommand == null) {
+        RPGSubCommand RPGSubCommand = subCommands.get(id);
+        if (RPGSubCommand == null) {
             return false;
         }
-        slbSubCommand.execute(exe, args);
+        RPGSubCommand.execute(exe, args);
         return true;
     }
 
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if (commandSender instanceof Player p) {
-            if (!p.hasPermission(SLBCommand.command + ".admin")) {
+            if (!p.hasPermission(RPGCommand.command + ".admin")) {
                 p.sendMessage(ChatColor.RED + "You cannot use this command!");
                 return true;
             }

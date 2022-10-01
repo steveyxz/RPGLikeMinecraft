@@ -12,7 +12,7 @@ import de.tr7zw.nbtapi.NBTBlock;
 import de.tr7zw.nbtapi.NBTChunk;
 import de.tr7zw.nbtapi.NBTCompound;
 import me.partlysunny.ConsoleLogger;
-import me.partlysunny.SunnySpigotBaseCore;
+import me.partlysunny.RPGLikeMinecraftCore;
 import me.partlysunny.gui.GuiManager;
 import me.partlysunny.gui.SelectGui;
 import me.partlysunny.gui.SelectGuiManager;
@@ -173,7 +173,7 @@ public final class Util {
 
     public static void scheduleRepeatingCancelTask(Runnable r, long delay, long repeat, long stopAfter) {
         BukkitScheduler scheduler = Bukkit.getScheduler();
-        JavaPlugin p = JavaPlugin.getPlugin(SunnySpigotBaseCore.class);
+        JavaPlugin p = JavaPlugin.getPlugin(RPGLikeMinecraftCore.class);
         BukkitTask t = scheduler.runTaskTimer(p, r, delay, repeat);
         scheduler.runTaskLater(p, t::cancel, stopAfter);
     }
@@ -224,7 +224,7 @@ public final class Util {
     }
 
     public static void copy(String source, File destination) throws IOException {
-        InputStream stream = SunnySpigotBaseCore.class.getClassLoader().getResourceAsStream(source);
+        InputStream stream = RPGLikeMinecraftCore.class.getClassLoader().getResourceAsStream(source);
         if (!destination.exists()) {
             Files.copy(stream, destination.toPath());
         }

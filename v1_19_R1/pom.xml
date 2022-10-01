@@ -18,7 +18,7 @@
 
     <parent>
         <groupId>me.partlysunny</groupId>
-        <artifactId>SunnySpigotBase</artifactId>
+        <artifactId>RPGLikeMinecraft</artifactId>
         <version>1.0</version>
     </parent>
 

@@ -1,15 +1,13 @@
-name: SunnySpigotBaseCore
+name: RPGLikeMinecraftCore
 version: '${project.version}'
-main: me.partlysunny.SunnySpigotBaseCore
-softdepend:
-  - WorldEdit
+main: me.partlysunny.RPGLikeMinecraftCore
 api-version: 1.16
 commands:
-  slb:
-    aliases: [ simpleluckyblocks, slb ]
-    description: SunnySpigotBase base command for ops
+  rpg:
+    aliases: [ rpg ]
+    description: RPGLikeMinecraft base command for ops
 
 permissions:
-  slb.admin:
+  rpg.admin:
     default: op
-    description: Admin commands (from /slb)
+    description: Admin commands (from /rpg)
