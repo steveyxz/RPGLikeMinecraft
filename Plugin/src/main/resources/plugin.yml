@@ -1,0 +1,15 @@
+name: SunnySpigotBaseCore
+version: '${project.version}'
+main: me.partlysunny.SunnySpigotBaseCore
+softdepend:
+  - WorldEdit
+api-version: 1.16
+commands:
+  slb:
+    aliases: [ simpleluckyblocks, slb ]
+    description: SunnySpigotBase base command for ops
+
+permissions:
+  slb.admin:
+    default: op
+    description: Admin commands (from /slb)
